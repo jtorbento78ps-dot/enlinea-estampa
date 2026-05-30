@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estampa GT - Estampado y personalización de franelas, gorras, uniformes y vasos. Envíos desde Guatemala a todo el mundo.">
+    <title>Estampa GT | Personalización y Estampados de Alta Calidad</title>
+    <style>
+        :root {
+            --primary-color: #ff5722; /* Naranja vibrante corporativo */
+            --secondary-color: #e64a19;
+            --dark-bg: #212121;
+            --text-color: #333;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--bg-light);
+        }
+
+        /* Cabecera y Navegación */
+        header {
+            background-color: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--dark-bg);
+        }
+
+        .logo-container svg {
+            width: 45px;
+            height: 45px;
+            fill: var(--primary-color);
+        }
+
+        .logo-container h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.8rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-bg);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Sección Hero */
+        .hero {
+            background: linear-gradient(rgba(33, 33, 33, 0.85), rgba(33, 33, 33, 0.7)), url('https://images.unsplash.com/photo-1563240619-44ce021c3378?auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: var(--white);
+            padding: 7rem 5%;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            color: #ddd;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--dark-bg);
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        /* Sección Nosotros */
+        .about-section {
+            background-color: var(--white);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            margin-bottom: 4rem;
+            border-top: 5px solid var(--primary-color);
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Catálogo y Tarjetas de Servicio */
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .product-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .product-content h3 {
+            color: var(--dark-bg);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        /* Contacto */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 4rem;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item strong {
+            color: var(--primary-color);
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Políticas y Transparencia */
+        .privacy-box {
+            background-color: #fff3e0;
+            padding: 2.5rem;
+            border-radius: 8px;
+            border-left: 6px solid var(--primary-color);
+        }
+
+        .privacy-box h3 {
+            color: var(--dark-bg);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: #eee;
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo svg {
+            width: 30px;
+            height: 30px;
+            fill: var(--primary-color);
+        }
+
+        .footer-logo h2 {
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .footer-links h4 {
+            color: var(--primary-color);
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .legal-info {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            font-size: 0.85rem;
+            color: #aaa;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .legal-info strong {
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                display: none; /* Simplificado para móviles. Requiere JS para botón hamburguesa en entorno real */
+            }
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header id="inicio">
+        <a href="#" class="logo-container">
+            <!-- Icono SVG de una camiseta/estampado -->
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.99 4.99L18 2 12 5 6 2 2.01 4.99 2 16h4v6h12v-6h4zM12 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+            </svg>
+            <h1>Estampa GT</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#politicas">Políticas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Impulsamos Tu Identidad Visual</h2>
+        <p>Expertos en personalización y estampados de alta calidad para empresas, eventos y marcas. Desde Guatemala para el mundo.</p>
+        <br>
+        <a href="#catalogo" class="btn-primary">Ver Catálogo de Productos</a>
+    </section>
+
+    <div class="container">
+        
+        <!-- Nosotros -->
+        <section id="nosotros" class="about-section">
+            <h2 class="section-title">Nuestra Historia y Misión</h2>
+            <p>En <strong>Estampa GT</strong>, nos dedicamos al estampado y personalización de indumentaria y artículos promocionales desde el año <strong>2022</strong>. Nacimos con la pasión de darle vida a las ideas de nuestros clientes. Hoy, estamos impulsados a seguir creciendo con una misión clara: brindar calidad de exportación y expandir nuestros clientes a nivel internacional.</p>
+        </section>
+
+        <!-- Catálogo de Productos -->
+        <h2 id="catalogo" class="section-title">Catálogo y Servicios</h2>
+        <section class="catalog-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" alt="Franelas Estampadas" class="product-img">
+                <div class="product-content">
+                    <h3>Franelas Personalizadas</h3>
+                    <p>Impresiones duraderas y diseños únicos en algodón de alta calidad.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1584680237515-b772b1464fb5?auto=format&fit=crop&w=800&q=80" alt="Uniformes Corporativos" class="product-img">
+                <div class="product-content">
+                    <h3>Uniformes Estampados</h3>
+                    <p>Soluciones textiles para empresas, dotaciones y equipos deportivos.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=800&q=80" alt="Gorras Personalizadas" class="product-img">
+                <div class="product-content">
+                    <h3>Gorras Bordadas y Estampadas</h3>
+                    <p>Estilos variados ideales para publicidad o uso personal.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=800&q=80" alt="Vasos y Tazas" class="product-img">
+                <div class="product-content">
+                    <h3>Vasos Personalizados</h3>
+                    <p>Sublimación perfecta para mugs, termos y vasos promocionales.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información de Contacto -->
+        <h2 id="contacto" class="section-title">Atención al Cliente</h2>
+        <section class="contact-grid">
+            <div>
+                <div class="contact-item">
+                    <strong>📍 Ubicación y Envíos:</strong>
+                    <p>Base en Guatemala. Realizamos envíos a nivel nacional y a todo el mundo.</p>
+                </div>
+                <div class="contact-item">
+                    <strong>⏰ Horario de Atención:</strong>
+                    <p>Tomamos pedidos en línea <strong>todos los días</strong> del año.</p>
+                </div>
+            </div>
+            <div>
+                <div class="contact-item">
+                    <strong>📞 Teléfono (Llamadas y WhatsApp):</strong>
+                    <p>+502 9301-2288</p>
+                </div>
+                <div class="contact-item">
+                    <strong>✉️ Correo Electrónico:</strong>
+                    <p>pedidos@enlinea-estampa.vercel.app</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Políticas de Privacidad -->
+        <h2 id="politicas" class="section-title">Transparencia y Privacidad</h2>
+        <section class="privacy-box">
+            <h3>Políticas de Privacidad y Términos de Uso</h3>
+            <p>En <strong>Estampa GT</strong>, valoramos y respetamos la privacidad de todos nuestros clientes. La información proporcionada durante el proceso de cotización o pedido (incluyendo nombres, direcciones de envío y datos de contacto) se utiliza de manera estrictamente confidencial y exclusiva para el cumplimiento y entrega de los servicios solicitados.</p>
+            <br>
+            <p>No comercializamos, compartimos ni distribuimos información personal a terceros. Cumplimos con todas las normativas de protección al consumidor y seguridad comercial. Al utilizar nuestros canales de contacto, usted acepta estos términos orientados a ofrecerle un servicio seguro y transparente.</p>
+        </section>
+
+    </div>
+
+    <!-- Footer Seguro -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-links">
+                <div class="footer-logo">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21.99 4.99L18 2 12 5 6 2 2.01 4.99 2 16h4v6h12v-6h4zM12 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+                    </svg>
+                    <h2>Estampa GT</h2>
+                </div>
+                <p style="font-size: 0.9rem; margin-top: 10px;">Tu aliado estratégico en personalización comercial e individual desde 2022. Calidad de exportación.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Sobre Nosotros</a></li>
+                    <li><a href="#catalogo">Catálogo de Servicios</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Soporte y Legal</h4>
+                <ul>
+                    <li><a href="#contacto">Contacto y Envíos</a></li>
+                    <li><a href="#politicas">Políticas de Privacidad</a></li>
+                    <li><a href="#politicas">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="legal-info">
+            <p>&copy; 2026 Estampa GT. Todos los derechos reservados.</p>
+            <br>
+            <p><strong>Información del Anunciante Verificado:</strong></p>
+            <p>47.406.294 HILDERBLANDO FRANKL BARBOSA DA SILVA</p>
+            <p>CNPJ: 47.406.294/0001-10 &nbsp; | &nbsp; CPF: 553.807.192-87</p>
+        </div>
+    </footer>
+
+</body>
+</html>
