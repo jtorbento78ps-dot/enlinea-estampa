@@ -3,462 +3,670 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Estampa GT - Estampado y personalización de franelas, gorras, uniformes y vasos. Envíos desde Guatemala a todo el mundo.">
-    <title>Estampa GT | Personalización y Estampados de Alta Calidad</title>
+    <meta name="description" content="Estampa CR - Personalización de prendas y artículos promocionales para empresas y eventos en Costa Rica. Calidad y diseño de exportación.">
+    <title>Estampa CR | Personalización de Prendas y Artículos Promocionales</title>
     <style>
+        /* --- VARIABLES DE DISEÑO (Estilo Textil & Promocional Moderno) --- */
         :root {
-            --primary-color: #ff5722; /* Naranja vibrante corporativo */
-            --secondary-color: #e64a19;
-            --dark-bg: #212121;
-            --text-color: #333;
-            --bg-light: #f9f9f9;
-            --white: #ffffff;
+            --primary: #1E3A8A;        /* Azul Corporativo Profundo */
+            --primary-dark: #172554;
+            --accent: #E11D48;         /* Rojo Vibrante / Acción */
+            --secondary: #0F172A;      /* Oscuro Casi Negro */
+            --light: #F8FAFC;          /* Fondo Claro Limpio */
+            --dark: #1E293B;           /* Texto Principal */
+            --gray: #64748B;           /* Texto Secundario */
+            --border: #E2E8F0;
+            --max-width: 1150px;
+            --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            --transition: all 0.3s ease;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
             scroll-behavior: smooth;
+            font-family: var(--font-main);
+            color: var(--dark);
+            background-color: #FFFFFF;
         }
 
         body {
-            color: var(--text-color);
             line-height: 1.6;
-            background-color: var(--bg-light);
+            padding-top: 110px; /* Espacio exacto para barra superior + navbar */
         }
 
-        /* Cabecera y Navegación */
-        header {
-            background-color: var(--white);
-            padding: 1rem 5%;
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; border-radius: 6px; }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-padding { padding: 80px 0; }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--secondary);
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            max-width: 650px;
+            margin: 0 auto 50px;
+            font-size: 1.1rem;
+        }
+
+        /* --- RAYITA SUPERIOR (TOP BAR DE VERIFICACIÓN GOOGLE ADS) --- */
+        .top-verification-bar {
+            background-color: var(--secondary);
+            color: #E2E8F0;
+            font-size: 0.8rem;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1001;
+            border-bottom: 1px solid #334155;
+            padding: 0 10px;
+            text-align: center;
+        }
+
+        .top-verification-bar span {
+            color: #4ADE80; /* Verde Verificación */
+            font-weight: 600;
+            margin-right: 6px;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        .header {
+            background-color: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(8px);
+            position: fixed;
+            top: 36px; /* Debajo de la rayita */
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            height: 74px;
+        }
+
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            height: 100%;
         }
 
         .logo-container {
             display: flex;
             align-items: center;
             gap: 12px;
-            text-decoration: none;
-            color: var(--dark-bg);
         }
 
-        .logo-container svg {
-            width: 45px;
-            height: 45px;
-            fill: var(--primary-color);
-        }
-
-        .logo-container h1 {
-            font-size: 1.8rem;
+        .logo-mark {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
             font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.8rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--dark-bg);
-            font-weight: 600;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Sección Hero */
-        .hero {
-            background: linear-gradient(rgba(33, 33, 33, 0.85), rgba(33, 33, 33, 0.7)), url('https://images.unsplash.com/photo-1563240619-44ce021c3378?auto=format&fit=crop&w=1920&q=80') center/cover;
-            color: var(--white);
-            padding: 7rem 5%;
-            text-align: center;
-        }
-
-        .hero h2 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        .hero p {
             font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem auto;
-            color: #ddd;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-link {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--gray);
+        }
+
+        .nav-link:hover { color: var(--primary); }
+
+        .btn-nav {
+            background-color: var(--accent);
+            color: #fff !important;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .btn-nav:hover { background-color: #BE123C; }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(135deg, var(--light) 0%, #EFF6FF 100%);
+            min-height: 65vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero-title span {
+            color: var(--accent);
+        }
+
+        .hero-text {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 32px;
+            max-width: 550px;
         }
 
         .btn-primary {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 0.8rem 2rem;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            transition: background 0.3s;
+            display: inline-block;
+            background-color: var(--primary);
+            color: #fff;
+            padding: 16px 36px;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 6px;
+            box-shadow: 0 4px 14px rgba(30, 58, 138, 0.25);
         }
 
         .btn-primary:hover {
-            background-color: var(--secondary-color);
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 5%;
+        /* --- SECCIÓN SERVICIOS --- */
+        .services {
+            background-color: #FFFFFF;
         }
 
-        .section-title {
-            text-align: center;
-            color: var(--dark-bg);
-            margin-bottom: 3rem;
-            font-size: 2.2rem;
-            text-transform: uppercase;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--primary-color);
-            margin: 10px auto 0;
-        }
-
-        /* Sección Nosotros */
-        .about-section {
-            background-color: var(--white);
-            padding: 3rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            margin-bottom: 4rem;
-            border-top: 5px solid var(--primary-color);
-        }
-
-        .about-section p {
-            font-size: 1.1rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        /* Catálogo y Tarjetas de Servicio */
-        .catalog-grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
         }
 
-        .product-card {
-            background-color: var(--white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
+        .service-card {
+            background-color: var(--light);
+            padding: 35px 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
         }
 
-        .product-card:hover {
-            transform: translateY(-8px);
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
         }
 
-        .product-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(30, 58, 138, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
 
-        .product-content {
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .product-content h3 {
-            color: var(--dark-bg);
-            margin-bottom: 0.5rem;
+        .service-title {
             font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--secondary);
         }
 
-        /* Contacto */
-        .contact-grid {
+        .service-desc {
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+
+        /* --- NOSOTROS --- */
+        .about-section {
+            background-color: var(--light);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-bottom: 4rem;
+            gap: 50px;
+            align-items: center;
         }
 
-        .contact-item {
-            margin-bottom: 1.5rem;
+        .about-text h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 20px;
         }
 
-        .contact-item strong {
-            color: var(--primary-color);
+        .about-text p {
+            margin-bottom: 16px;
+            color: var(--gray);
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+
+        /* --- CONTACTO --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            background-color: var(--secondary);
+            color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .info-item {
+            margin-bottom: 25px;
+        }
+
+        .info-item h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #94A3B8;
+            margin-bottom: 6px;
+        }
+
+        .info-item p {
+            font-size: 1.05rem;
+            color: #F8FAFC;
+        }
+
+        .contact-form {
+            background-color: var(--light);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-group label {
             display: block;
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--secondary);
         }
 
-        /* Políticas y Transparencia */
-        .privacy-box {
-            background-color: #fff3e0;
-            padding: 2.5rem;
+        .form-control {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #CBD5E1;
+            border-radius: 6px;
+            font-family: var(--font-main);
+            font-size: 1rem;
+            background-color: #fff;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+
+        /* --- POLÍTICAS Y TRANSPARENCIA --- */
+        .policies-section {
+            background-color: #FFFFFF;
+        }
+
+        .policies-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .policy-card {
+            padding: 25px;
+            border: 1px solid var(--border);
             border-radius: 8px;
-            border-left: 6px solid var(--primary-color);
+            background-color: var(--light);
         }
 
-        .privacy-box h3 {
-            color: var(--dark-bg);
-            margin-bottom: 1rem;
+        .policy-card h3 {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            font-weight: 700;
         }
 
-        /* Footer */
-        footer {
-            background-color: var(--dark-bg);
-            color: #eee;
-            padding: 4rem 5% 2rem;
+        .policy-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            text-align: justify;
+        }
+
+        /* --- FOOTER DE VERIFICACIÓN LEGAL --- */
+        .footer {
+            background-color: var(--secondary);
+            color: #94A3B8;
+            padding: 60px 0 30px;
+            font-size: 0.9rem;
+            border-top: 1px solid #334155;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 40px;
+            margin-bottom: 30px;
         }
 
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 1rem;
+        /* CAJA DE VERIFICACIÓN GOOGLE ADS */
+        .verification-box {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            padding: 25px;
+            border-radius: 8px;
         }
 
-        .footer-logo svg {
-            width: 30px;
-            height: 30px;
-            fill: var(--primary-color);
+        .verification-box .badge {
+            display: inline-block;
+            background-color: rgba(74, 222, 128, 0.1);
+            color: #4ADE80;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .footer-logo h2 {
-            font-size: 1.5rem;
-            color: var(--white);
+        .verification-box h4 {
+            color: #FFF;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
         }
 
-        .footer-links h4 {
-            color: var(--primary-color);
-            margin-bottom: 1.2rem;
-            font-size: 1.2rem;
+        .verification-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 10px;
         }
 
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links a {
-            color: #ccc;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.8rem;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .legal-info {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #444;
+        .verification-details div p {
+            margin-bottom: 2px;
             font-size: 0.85rem;
-            color: #aaa;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
-        .legal-info strong {
-            color: var(--primary-color);
-            font-size: 1rem;
+        .verification-details strong {
+            color: #E2E8F0;
         }
 
-        @media (max-width: 768px) {
-            .contact-grid {
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #64748B;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 850px) {
+            .hero-grid, .about-grid, .contact-grid, .footer-grid, .policies-grid {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
-            nav ul {
-                display: none; /* Simplificado para móviles. Requiere JS para botón hamburguesa en entorno real */
-            }
-            .hero h2 {
-                font-size: 2.5rem;
-            }
+            .hero-title { font-size: 2.4rem; }
+            .nav-menu { display: none; }
+            .top-verification-bar { font-size: 0.72rem; }
+            body { padding-top: 110px; }
+            .verification-details { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header & Navigation -->
-    <header id="inicio">
-        <a href="#" class="logo-container">
-            <!-- Icono SVG de una camiseta/estampado -->
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21.99 4.99L18 2 12 5 6 2 2.01 4.99 2 16h4v6h12v-6h4zM12 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
-            </svg>
-            <h1>Estampa GT</h1>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
-                <li><a href="#catalogo">Catálogo</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#politicas">Políticas</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Impulsamos Tu Identidad Visual</h2>
-        <p>Expertos en personalización y estampados de alta calidad para empresas, eventos y marcas. Desde Guatemala para el mundo.</p>
-        <br>
-        <a href="#catalogo" class="btn-primary">Ver Catálogo de Productos</a>
-    </section>
-
-    <div class="container">
-        
-        <!-- Nosotros -->
-        <section id="nosotros" class="about-section">
-            <h2 class="section-title">Nuestra Historia y Misión</h2>
-            <p>En <strong>Estampa GT</strong>, nos dedicamos al estampado y personalización de indumentaria y artículos promocionales desde el año <strong>2022</strong>. Nacimos con la pasión de darle vida a las ideas de nuestros clientes. Hoy, estamos impulsados a seguir creciendo con una misión clara: brindar calidad de exportación y expandir nuestros clientes a nivel internacional.</p>
-        </section>
-
-        <!-- Catálogo de Productos -->
-        <h2 id="catalogo" class="section-title">Catálogo y Servicios</h2>
-        <section class="catalog-grid">
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" alt="Franelas Estampadas" class="product-img">
-                <div class="product-content">
-                    <h3>Franelas Personalizadas</h3>
-                    <p>Impresiones duraderas y diseños únicos en algodón de alta calidad.</p>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1584680237515-b772b1464fb5?auto=format&fit=crop&w=800&q=80" alt="Uniformes Corporativos" class="product-img">
-                <div class="product-content">
-                    <h3>Uniformes Estampados</h3>
-                    <p>Soluciones textiles para empresas, dotaciones y equipos deportivos.</p>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=800&q=80" alt="Gorras Personalizadas" class="product-img">
-                <div class="product-content">
-                    <h3>Gorras Bordadas y Estampadas</h3>
-                    <p>Estilos variados ideales para publicidad o uso personal.</p>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=800&q=80" alt="Vasos y Tazas" class="product-img">
-                <div class="product-content">
-                    <h3>Vasos Personalizados</h3>
-                    <p>Sublimación perfecta para mugs, termos y vasos promocionales.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Información de Contacto -->
-        <h2 id="contacto" class="section-title">Atención al Cliente</h2>
-        <section class="contact-grid">
-            <div>
-                <div class="contact-item">
-                    <strong>📍 Ubicación y Envíos:</strong>
-                    <p>Base en Guatemala. Realizamos envíos a nivel nacional y a todo el mundo.</p>
-                </div>
-                <div class="contact-item">
-                    <strong>⏰ Horario de Atención:</strong>
-                    <p>Tomamos pedidos en línea <strong>todos los días</strong> del año.</p>
-                </div>
-            </div>
-            <div>
-                <div class="contact-item">
-                    <strong>📞 Teléfono (Llamadas y WhatsApp):</strong>
-                    <p>+502 9301-2288</p>
-                </div>
-                <div class="contact-item">
-                    <strong>✉️ Correo Electrónico:</strong>
-                    <p>pedidos@enlinea-estampa.vercel.app</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Políticas de Privacidad -->
-        <h2 id="politicas" class="section-title">Transparencia y Privacidad</h2>
-        <section class="privacy-box">
-            <h3>Políticas de Privacidad y Términos de Uso</h3>
-            <p>En <strong>Estampa GT</strong>, valoramos y respetamos la privacidad de todos nuestros clientes. La información proporcionada durante el proceso de cotización o pedido (incluyendo nombres, direcciones de envío y datos de contacto) se utiliza de manera estrictamente confidencial y exclusiva para el cumplimiento y entrega de los servicios solicitados.</p>
-            <br>
-            <p>No comercializamos, compartimos ni distribuimos información personal a terceros. Cumplimos con todas las normativas de protección al consumidor y seguridad comercial. Al utilizar nuestros canales de contacto, usted acepta estos términos orientados a ofrecerle un servicio seguro y transparente.</p>
-        </section>
-
+    <!-- RAYITA SUPERIOR (TOP BAR DE VERIFICACIÓN MANUAL GOOGLE ADS) -->
+    <div class="top-verification-bar">
+        <span>✓ Anunciante Verificado Google Ads:</span> JORGE TASSINARI DE BORBA | CNPJ: 28.557.947/0001-17 (Brasil)
     </div>
 
-    <!-- Footer Seguro -->
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-links">
-                <div class="footer-logo">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21.99 4.99L18 2 12 5 6 2 2.01 4.99 2 16h4v6h12v-6h4zM12 18c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
-                    </svg>
-                    <h2>Estampa GT</h2>
+    <!-- NAVEGACIÓN -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#inicio" class="logo-container">
+                <div class="logo-mark">E</div>
+                <span class="logo-text">Estampa CR</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#nosotros" class="nav-link">La Empresa</a></li>
+                    <li><a href="#transparencia" class="nav-link">Cumplimiento Legal</a></li>
+                    <li><a href="#contacto" class="nav-link btn-nav">Cotizar Pedido</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section id="inicio" class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <h1 class="hero-title">Personalización y Estampado que <span>Destaca tu Marca</span></h1>
+                    <p class="hero-text">Especialistas en serigrafía, bordados de alta definición y artículos promocionales. Producción estandarizada de exportación con cobertura de envío continuo para el mercado en Costa Rica.</p>
+                    <a href="#contacto" class="btn-primary">Solicitar Cotización Mayorista</a>
                 </div>
-                <p style="font-size: 0.9rem; margin-top: 10px;">Tu aliado estratégico en personalización comercial e individual desde 2022. Calidad de exportación.</p>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=800&q=80" alt="Prendas de vestir personalizadas y estampado textil">
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Enlaces Rápidos</h4>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#nosotros">Sobre Nosotros</a></li>
-                    <li><a href="#catalogo">Catálogo de Servicios</a></li>
-                </ul>
+        </section>
+
+        <!-- SERVICIOS -->
+        <section id="servicios" class="section-padding services container">
+            <h2 class="section-title">Soluciones de Estampado y Personalización</h2>
+            <p class="section-subtitle">Ofrecemos tecnología de punta en impresión textil y promocional para satisfacer las exigencias de volumen y calidad del mercado empresarial.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">👕</div>
+                    <h3 class="service-title">Serigrafía e Impresión Textil</h3>
+                    <p class="service-desc">Estampado de alta durabilidad en camisetas, sudaderas y uniformes corporativos utilizando tintas ecológicas de excelente fijación y resistencia al lavado.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧵</div>
+                    <h3 class="service-title">Bordado Industrial Computarizado</h3>
+                    <p class="service-desc">Acabados elegantes y profesionales para polos, gorras, camisas institucionales y chaquetas con hilos de máxima resistencia y brillo.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎁</div>
+                    <h3 class="service-title">Artículos Promocionales (Merch)</h3>
+                    <p class="service-desc">Personalización de botellas, tazas, libretas, bolsas de tela (tote bags) y bolígrafos ideales para ferias comerciales, eventos corporativos y campañas publicitarias.</p>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Soporte y Legal</h4>
-                <ul>
-                    <li><a href="#contacto">Contacto y Envíos</a></li>
-                    <li><a href="#politicas">Políticas de Privacidad</a></li>
-                    <li><a href="#politicas">Términos y Condiciones</a></li>
-                </ul>
+        </section>
+
+        <!-- NOSOTROS -->
+        <section id="nosotros" class="section-padding about-section">
+            <div class="container about-grid">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80" alt="Proceso de producción en taller de estampado y confección">
+                </div>
+                <div class="about-text">
+                    <h2>Nuestra Operación y Logística</h2>
+                    <p><strong>Estampa CR</strong> es una empresa con una sólida trayectoria que ha estado operando e innovando en la industria de la personalización y los productos promocionales desde el año 2022. Nuestra administración legal y centro comercial matriz operan formalmente bajo registro fiscal en <strong>Brasil</strong>.</p>
+                    <p>A lo largo de nuestra historia, hemos consolidado una red de distribución y producción altamente eficiente, lo que nos ha posicionado con un fuerte enfoque y cobertura en <strong>Costa Rica</strong>. Atendemos de manera continua a empresas, organizaciones y eventos costarricenses, garantizando un control de calidad estricto, tiempos de entrega puntuales y total formalidad comercial.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- POLÍTICAS Y TRANSPARENCIA (VITAL PARA GOOGLE ADS) -->
+        <section id="transparencia" class="section-padding policies-section container">
+            <h2 class="section-title">Cumplimiento y Transparencia Comercial</h2>
+            <p class="section-subtitle">En consonancia con las directrices de publicidad y protección al consumidor de Google Ads, presentamos los términos que rigen nuestras operaciones.</p>
+            
+            <div class="policies-grid">
+                <div class="policy-card">
+                    <h3>Registro Legal y Operacional</h3>
+                    <p>La titularidad, administración mercantil y facturación de las transacciones generadas en este sitio web son operadas formalmente en Brasil por la persona física/jurídica legalmente verificada <strong>JORGE TASSINARI DE BORBA</strong>, inscrita bajo el registro público fiscal <strong>CNPJ 28.557.947/0001-17</strong>.</p>
+                </div>
+                <div class="policy-card">
+                    <h3>Garantía de Producción y Calidad</h3>
+                    <p>Todos los pedidos personalizados se someten a un riguroso control de calidad antes de su despacho hacia Costa Rica. Garantizamos que el producto final coincide exactamente con los prototipos o artes de aprobación digital confirmados por el cliente, usando materiales textiles y promocionales de primer nivel.</p>
+                </div>
+                <div class="policy-card">
+                    <h3>Privacidad de Datos Comerciales</h3>
+                    <p>Respetamos estrictamente la información confidencial de las empresas y clientes. Los logotipos, manuales de marca y datos de contacto compartidos para la producción o cotización se protegen con absoluta seguridad y no se utilizan para fines ajenos al pedido contratado.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="section-padding container" style="border-top: 1px solid var(--border);">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Cotiza tu Producción</h3>
+                    <p style="color: #CBD5E1; margin-bottom: 30px;">Nuestro equipo de asesores comerciales y diseñadores está listo para procesar tus requerimientos de estampado y volumen mayorista.</p>
+                    
+                    <div class="info-item">
+                        <h4>Cobertura y Envíos</h4>
+                        <p>Despachos organizados y continuos para todo el territorio de Costa Rica y la región centroamericana desde nuestra red logística en Brasil.</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Correo Electrónico de Pedidos</h4>
+                        <p>pedidos@estampas.vercel.app</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Horario de Atención Comercial</h4>
+                        <p>Lunes a Viernes: 08:00 AM - 06:00 PM</p>
+                    </div>
+                </div>
+
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Cotización recibida con éxito. Un asesor de Estampa CR se comunicará a tu correo a la brevedad.');">
+                    <div class="form-group">
+                        <label>Nombre Completo o Razón Social</label>
+                        <input type="text" class="form-control" placeholder="Ej. Corporación Comercial S.A." required>
+                    </div>
+                    <div class="form-group">
+                        <label>Correo Electrónico Corporativo</label>
+                        <input type="email" class="form-control" placeholder="pedidos@tueventooempresa.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo de Producto a Personalizar</label>
+                        <select class="form-control" required>
+                            <option value="">Seleccione una opción...</option>
+                            <option value="textil">Camisetas o Sudaderas Estampadas</option>
+                            <option value="bordado">Uniformes o Gorras Bordadas</option>
+                            <option value="merch">Artículos Promocionales (Merch para eventos)</option>
+                            <option value="mixto">Paquete Corporativo Mixto</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Detalle del Pedido y Cantidad Estimada</label>
+                        <textarea class="form-control" rows="4" placeholder="Indícanos la cantidad de piezas aproximadas, colores de preferencia o fecha del evento..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; border:none; cursor:pointer;">Enviar Solicitud de Cotización</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER Y VERIFICACIÓN OFICIAL GOOGLE ADS -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <span style="color: #FFF; font-weight: 800; font-size: 1.3rem; display: block; margin-bottom: 12px;">Estampa CR</span>
+                <p style="margin-bottom: 16px;">Empresa líder en personalización de prendas textiles y artículos promocionales para empresas, ferias y marcas. Operando con excelencia de exportación y servicio ininterrumpido desde el año 2022.</p>
+                <p style="font-size: 0.8rem; color: #64748B;">Cumplimiento integral con las normativas internacionales de comercio electrónico y transparencia de publicidad digital.</p>
+            </div>
+            
+            <!-- CAJA DE VERIFICACIÓN LEGAL PARA REVISIÓN DE GOOGLE ADS -->
+            <div class="verification-box">
+                <span class="badge">✓ Verificación Oficial del Anunciante</span>
+                <h4>Declaración de Identidad y Registro Fiscal (Brasil)</h4>
+                <p style="font-size: 0.85rem; color: #CBD5E1; margin-bottom: 12px;">La titularidad legal y responsabilidad comercial de este sitio web (alojado en <strong>enlinea-estampas.vercel.app</strong>) ante las plataformas de publicidad (Google Ads) corresponde a la siguiente entidad verificada:</p>
+                
+                <div class="verification-details">
+                    <div>
+                        <p><strong>Nome / Razón Comercial:</strong></p>
+                        <p>JORGE TASSINARI DE BORBA</p>
+                        
+                        <p style="margin-top: 10px;"><strong>Correo Oficial:</strong></p>
+                        <p>pedidos@estampas.vercel.app</p>
+                    </div>
+                    <div>
+                        <p><strong>Registro Fiscal (CNPJ):</strong></p>
+                        <p>28.557.947/0001-17</p>
+                        
+                        <p style="margin-top: 10px;"><strong>Registro Fiscal (CPF):</strong></p>
+                        <p>023.136.250-10</p>
+                    </div>
+                </div>
             </div>
         </div>
         
-        <div class="legal-info">
-            <p>&copy; 2026 Estampa GT. Todos los derechos reservados.</p>
-            <br>
-            <p><strong>Información del Anunciante Verificado:</strong></p>
-            <p>47.406.294 HILDERBLANDO FRANKL BARBOSA DA SILVA</p>
-            <p>CNPJ: 47.406.294/0001-10 &nbsp; | &nbsp; CPF: 553.807.192-87</p>
+        <div class="container footer-bottom">
+            <p>&copy; 2022 - 2026 Estampa CR - Todos los derechos reservados. | Operaciones Legales Registradas en Brasil</p>
         </div>
     </footer>
 
